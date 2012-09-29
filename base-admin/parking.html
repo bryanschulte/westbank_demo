@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+    <head>
     <meta charset="utf-8">
     <title>Westbank Portal</title>
     
@@ -19,6 +19,7 @@
     <link href="./css/pages/dashboard.css" rel="stylesheet">   
 
     <link href="./css/custom.css" rel="stylesheet">
+    <link href="./css/datepicker.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -63,8 +64,8 @@
 
 			<ul class="mainnav">
 			
-				<li class="active">
-					<a href="./">
+				<li >
+					<a href="./portal.html">
 						<i class="icon-home"></i>
 						<span>Home</span>
 					</a>	    				
@@ -77,7 +78,7 @@
 					</a>	    				
 				</li>
 				
-				<li class="dropdown">					
+				<li class="active dropdown">					
 					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
 						<i class="icon-glass"></i>
 						<span>Facilities</span>
@@ -85,7 +86,7 @@
 					</a>	
 				
 					<ul class="dropdown-menu">
-						<li><a href="./parking.html">Request a parking pass</a></li>
+						<li><a href="./charts.html">Request a parking pass</a></li>
 						<li><a href="./account.html">Book a room</a></li>
 						<li><a href="./login.html">Report an issue</a></li>
 					</ul> 	  				
@@ -128,7 +129,7 @@
 
 </div> <!-- /subnavbar -->
     
-    
+
 <div class="main">
 	
 	<div class="main-inner">
@@ -137,176 +138,97 @@
 	
 	      <div class="row">
 	      	
-	      	<div class="span6">
+	      	<div class="span8">      		
 	      		
-	      		
-
-
-				
-				
-				<div class="widget widget-nopad">
-							
-					<div class="widget-header">
-						<i class="icon-list-alt"></i>
-						<h3>Messages</h3>
-					</div> <!-- /widget-header -->
+	      		<div class="widget ">
+	      			
+	      			<div class="widget-header">
+	      				<i class="icon-user"></i>
+	      				<h3>Request a Parking Pass</h3>
+	  				</div> <!-- /widget-header -->
 					
 					<div class="widget-content">
 						
-						<ul class="news-items">
-							<li>
-								
-								<div class="news-item-detail">										
-									<a href="javascript:;" class="news-item-title">Repairs to your unit</a>
-									<p class="news-item-preview">Hi Bryan, just a reminder that we'll be stopping by to look at the ...</p>
-								</div>
-								
-								<div class="news-item-date">
-									<span class="news-item-day">21</span>
-									<span class="news-item-month">Sep</span>
-								</div>
-							</li>
-							<li>
-								<div class="news-item-detail">										
-									<a href="javascript:;" class="news-item-title">Delivery Notification</a>
-									<p class="news-item-preview">You have a package waiting at the front desk from Amazon.com</p>
-								</div>
-								
-								<div class="news-item-date">
-									<span class="news-item-day">19</span>
-									<span class="news-item-month">Sep</span>
-								</div>
-							</li>
-							
-						</ul>
 						
-					</div> <!-- /widget-content -->
-				
-				</div> <!-- /widget -->	
-
-				<div class="widget widget-table">
 						
-					<div class="widget-header">
-						<i class="icon-calendar"></i>
-						<h3>Calendar</h3>
-					</div> <!-- /widget-header -->
-					
-					<div class="widget-content">
-						
-						<table class="table table-striped table-bordered">
-							<thead>
-								<tr>
-									<th colspan=2>Sunday, September 30</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td width="50%">12:00pm-5:00pm</td>
-									<td width="50%">Resident BBQ</td>
-								</tr>
-							</tbody>
-						</table>
-						<table class="table table-striped table-bordered">
-							<thead>
-								<tr>
-									<th colspan=2>Friday, October 5</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td width="50%">6:00pm-8:00pm</td>
-									<td width="50%">Party Room 1 Booked</td>
-								</tr>
-							</tbody>
-						</table>
-						
-					</div> <!-- /widget-content -->
-				
-				</div> <!-- /widget -->
-						
+					<form id="edit-profile" class="form-horizontal">
+									<fieldset>
+										
+										<div class="alert alert-block alert-success fade in"  id="confirm">
+											<button type="button" class="close" data-dismiss="alert">x</button>
+											<h4 class="alert-heading">Thanks!</h4>
+											<p>Your parking pass request has been received. Please check your messages to retrieve the pass</p>
+											<p>
+												<a class="btn btn-primary" href="portal-pass.html">Return to the home page</a>
+											</p>
+										</div>
+										
+										
+										<div class="control-group">											
+											<label class="control-label" for="firstname">Guest Name</label>
+											<div class="controls">
+												<input type="text" class="input-medium" id="firstname" value="">
+											</div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+										
+										
+										<div class="control-group">											
+											<label class="control-label" for="license">License Plate #</label>
+											<div class="controls">
+												<input type="text" class="input-medium" id="license" value="">
+											</div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+										
+										
+										<div class="control-group">											
+											<label class="control-label" for="date">Date</label>
+											<div class="controls">
+												<div class="input-append date" id="datepicker" data-date="" data-date-format="mm/dd/yy">
+													<input class="input-small" size="16" type=text value="" >
+													<span class="add-on"><i class="icon-th"></i></span>
+												</div>
+											</div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+										
+										
+										
+										<div class="form-actions">
+											<a class="btn btn-primary" href="#" id = "submit">Request Pass</a>
 											
-				<div class="widget">
-					
-					<div class="widget-header">
-						<i class="icon-file"></i>
-						<h3>News</h3>
-					</div> <!-- /widget-header -->
-					
-					<div class="widget-content">
-
-						<div class="news-image">
-							<img src="./img/fall.jpg" style="width:100%;margin-bottom:20px;"/>
-							<h2><span style="padding-left:15px;">Fall Newsletter</span></h2>
-						</div>
-						
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						
-						
-						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>					
-						
+											<button class="btn">Cancel</button>
+										</div> <!-- /form-actions -->
+									</fieldset>
+								</form>
 					</div> <!-- /widget-content -->
-				
+						
 				</div> <!-- /widget -->
 	      		
-		    </div> <!-- /span6 -->
+		    </div> <!-- /span8 -->
 	      	
 	      	
-	      	<div class="span6">	
-				<div class="widget">
-						
-					<div class="widget-header">
-						<i class="icon-tags"></i>
-						<h3>Featured offers</h3>
-					</div> <!-- /widget-header -->
-					
-					<div class="widget-content">	
-						<div id="feature-carousel" class="carousel slide">
-							<div class="carousel-inner">
-								<div class="item active">
-									<div class="carousel-caption" ><h4>Contemporary Leather Furnishings from Natural</h4></div>
-									<img src="./img/natural.jpg" style="width:100%;" alt="">
-									
-								</div>
-								<div class="item">
-									<img src="./img/parlour.jpg" style="width:100%;" alt="">
-									<div class="carousel-caption"><h4>Styling by Parlour</h4></div>
-								</div>
-								<div class="item">
-									<img src="./img/sazerac.jpg" style="width:100%;" alt="">
-									<div class="carousel-caption"><h4>Modern Gastropub Dining at Sazerac</h4></div>
-								</div>
-							</div>
-
-						</div>				
-						<h4><a href="./faq.html">See more offers in the digital marketplace</a></h4>
-					</div> <!-- /widget-content -->
+	      	<div class="span4">
 				
-				</div> <!-- /widget -->
-						
-				<div class="widget">
-						
+				
+				<div class="widget widget-box">
+					
 					<div class="widget-header">
-						<i class="icon-gift"></i>
-						<h3>The big deal</h3>
-					</div> <!-- /widget-header -->
+	      				<h3>About Guest Parking</h3>
+	  				</div> <!-- /widget-header -->
 					
 					<div class="widget-content">
-						<div id="feature-carousel" class="carousel slide">
-							<div class="carousel-inner">
-								<div class="item active">
-									<div class="carousel-caption" ><h4>50% Off a Zen Artistry Bouquet from Alma Florist</h4></div>
-									<img src="./img/zen.png" style="width:100%;" alt="">
-								</div>
-							</div>
-						</div>				
-						<h4><a href="./faq.html">See more offers in the digital marketplace</a></h4>
-					</div> <!-- /widget-content -->
 						
-				</div> <!-- /widget -->	
+							
+						<p>Guest passes are issued on a first-come, first-served basis</p>
+												
+						<p>Once we receive your request, a pass will be automatically issued to you if spaces are availble for the requested date. The pass will appear in your concierge messages.</p>
+
+						<p>Guests should display the printed pass document in the lower left corner of their windshield.</p>
+						
+					</div> <!-- /widget-content -->
+					
+				</div> <!-- /widget-box -->
 									
-		      </div> <!-- /span6 -->
+		      </div> <!-- /span4 -->
 	      	
 	      </div> <!-- /row -->
 	
@@ -316,8 +238,9 @@
     
 </div> <!-- /main -->
     
-
-
+    
+    
+ 
 <div class="extra">
 
 	<div class="extra-inner">
@@ -410,28 +333,25 @@
 </div> <!-- /footer -->
     
 
-<!-- Le javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+
 <script src="./js/jquery-1.7.2.min.js"></script>
-<script src="./js/excanvas.min.js"></script>
-<script src="./js/jquery.flot.js"></script>
-<script src="./js/jquery.flot.pie.js"></script>
-<script src="./js/jquery.flot.orderBars.js"></script>
-<script src="./js/jquery.flot.resize.js"></script>
-
-
+	
 <script src="./js/bootstrap.js"></script>
+<script src="./js/bootstrap-alert.js"></script>
 <script src="./js/base.js"></script>
 
-<!--<script src="./js/charts/area.js"></script>
-<script src="./js/charts/donut.js"></script>-->
 <script src="./js/jquery.backstretch.min.js"></script>
+<script src="./js/bootstrap-datepicker.js"></script>
+
 
 <script type="text/javascript">
 	$(document).ready( function() {
+		$('#confirm').hide();
+		$('#confirm').alert();
 		$.backstretch("./img/1.jpg");
-		$('#feature-carousel').carousel();
+		$('#datepicker').datepicker();
+		$('#submit').click( function() {
+			$('#confirm').css("display","block"); })
 	})
 </script>
 
@@ -440,4 +360,5 @@
 window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){f[z]=function(){(a.s=a.s||[]).push(arguments)};var a=f[z]._={},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={0:+new Date};a.P=function(u){a.p[u]=new Date-a.p[0]};function s(){a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{b.contentWindow[g].open()}catch(w){c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{var t=b.contentWindow[g];t.write(p());t.close()}catch(x){b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
 /* custom configuration goes here (www.olark.com/documentation) */
 olark.identify('8320-781-10-6378');/*]]>{/literal}*/</script><noscript><a href="https://www.olark.com/site/8320-781-10-6378/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript><!-- end olark code -->
+  </body>
 </html>
